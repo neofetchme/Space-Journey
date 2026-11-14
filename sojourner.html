@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sojourner — The First Rover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@1,400&family=Great+Vibes&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <a class="back" href="index.html">← Back to the journey</a>
+
+  <header class="hero">
+    <h1>Sojourner</h1>
+    <p class="script">The first rover</p>
+    <img class="hero-img" src="images/instruments.png" alt="The Sojourner rover on the surface of Mars">
+    <p class="lead">In 1997, a tiny robot rolled onto Mars. It was the first wheeled rover to explore another planet.</p>
+    <p class="scrollhint">Scroll to explore ↓</p>
+  </header>
+
+  <section class="reveal">
+    <h2>Quick facts</h2>
+    <dl class="facts">
+      <div><dt>Launch</dt><dd>Dec 4, 1996</dd></div>
+      <div><dt>Launched from</dt><dd>Cape Canaveral, Florida</dd></div>
+      <div><dt>Rocket</dt><dd>Delta II 7925</dd></div>
+      <div><dt>Landed on Mars</dt><dd>July 4, 1997</dd></div>
+      <div><dt>Landing site</dt><dd>Ares Vallis</dd></div>
+      <div><dt>Mission ended</dt><dd>Sept 27, 1997</dd></div>
+    </dl>
+    <p class="clock-line">Time since the mission ended: <strong id="clock">…</strong></p>
+  </section>
+
+  <section class="reveal">
+    <h2>The journey: tap each step</h2>
+    <div class="steps" id="steps" role="tablist"></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="panel glass" aria-live="polite"><h3 id="stepTitle"></h3><p id="stepText"></p></div>
+  </section>
+
+  <section class="reveal">
+    <h2>Meet the rover: tap the glowing dots</h2>
+    <div class="split">
+      <div class="stage">
+        <img src="images/instruments.png" alt="Close view of Sojourner with solar panel, six wheels and antenna">
+        <button class="hot" style="left:49%;top:50%" data-k="0" aria-label="Solar panel"></button>
+        <button class="hot" style="left:25%;top:76%" data-k="1" aria-label="Wheels"></button>
+        <button class="hot" style="left:52%;top:16%" data-k="2" aria-label="Antenna"></button>
+      </div>
+      <div class="panel glass" aria-live="polite"><h3 id="hotTitle">Tap a dot</h3><p id="hotText">Each dot shows one part of Sojourner and what it did.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>The bouncy landing</h2>
+    <div class="split">
+      <img src="images/airbags.png" alt="Giant airbags used to land Mars Pathfinder, tested on Earth">
+      <div>
+        <p>Mars is hard and rocky. So a <strong>parachute</strong> slowed the spacecraft and <strong>giant airbags</strong> cushioned the crash. It was the first mission to land this way.</p>
+        <div class="stats"><div><span class="big">31 mph</span>speed at impact</div><div><span class="big">~15</span>bounces</div></div>
+      </div>
+    </div>
+    <div class="drop"><div id="ball"></div></div>
+    <p><button class="btn" id="dropBtn">Drop the airbags!</button> &nbsp; Bounces: <strong id="count">0</strong></p>
+  </section>
+
+  <section class="reveal">
+    <h2>Why those names?</h2>
+    <div class="cards">
+      <article class="mini"><h3>Sojourner</h3><p>Named after <strong>Sojourner Truth</strong>, who fought for civil rights and equality.</p></article>
+      <article class="mini"><h3>Carl Sagan Memorial Station</h3><p>The lander honours astronomer <strong>Carl Sagan</strong> for his contributions to science.</p></article>
+    </div>
+    <p>Scientists built a safe ramp so the rover could roll from the lander onto Mars. The lander and rover worked as a team.</p>
+  </section>
+
+  <section class="reveal">
+    <h2>Where it landed: Ares Vallis</h2>
+    <div class="split">
+      <img src="images/ares-vallis.png" alt="Rocky landscape at Ares Vallis on Mars">
+      <div>
+        <p>Ares Vallis is an <strong>ancient floodplain</strong>. Huge amounts of water once flowed across it.</p>
+        <p>Scientists studied the surface and picked it as a fairly safe landing spot. Rocks left by the flood help us read Mars’s history.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Science tools on board</h2>
+    <div class="cards">
+      <article class="mini"><h3>Alpha Proton X-ray Spectrometer</h3><p>Worked out what rocks and soil are made of.</p></article>
+      <article class="mini"><h3>Three cameras</h3><p>Photographed the land for geology and checked how the technology was performing.</p></article>
+      <article class="mini"><h3>Weather station</h3><p>Measured Mars’s air during descent and the weather at the lander.</p></article>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>What Sojourner taught us</h2>
+    <ul class="lessons">
+      <li>Robots can explore places too hard for people to visit.</li>
+      <li>Thousands of images and chemical tests gave clues about Mars’s past.</li>
+      <li>Mars may once have been warmer and wetter than it is today.</li>
+      <li>Creative ideas, like airbag landings, make hard missions possible.</li>
+    </ul>
+    <details><summary>Tap for a fun fact</summary><p>Sojourner was built to work for about a week. It kept going for nearly three months.</p></details>
+  </section>
+
+  <section class="reveal">
+    <h2>Test yourself</h2>
+    <div id="quiz"></div>
+    <p id="score"></p>
+  </section>
+
+  <footer class="end reveal">
+    <p class="script">Abandoned, but not forgotten.</p>
+    <a class="btn" href="spirit-opportunity.html">Meet Spirit &amp; Opportunity →</a>
+  </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

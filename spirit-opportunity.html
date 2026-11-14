@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spirit &amp; Opportunity — The Twin Explorers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@1,400&family=Great+Vibes&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <a class="back" href="sojourner.html">← Back to Sojourner</a>
+
+  <header class="hero">
+    <h1>Spirit &amp; Opportunity</h1>
+    <p class="script">The twin explorers</p>
+    <img class="hero-img" src="images/mer-art.png" alt="NASA artwork of a Mars Exploration Rover on Mars">
+    <p class="lead">Two identical robot geologists landed on opposite sides of Mars in 2004. Their job: find out if Mars once had water.</p>
+    <p class="scrollhint">Scroll to explore ↓</p>
+  </header>
+
+  <section class="reveal">
+    <h2>Choose your rover</h2>
+    <div class="steps" id="rovTabs" role="tablist"></div>
+    <div class="panel glass" aria-live="polite">
+      <h3 id="rTitle"></h3><p id="rStory"></p>
+      <dl class="facts" id="rFacts"></dl>
+      <p class="clock-line">Silent for: <strong id="rClock"></strong></p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Who drove farther?</h2>
+    <p>The white line is a marathon (42.2 km). Press the button and watch.</p>
+    <div class="row"><span>Spirit</span><div class="track"><div class="fill s" data-w="17.1"></div><i class="mark"></i></div><span>7.73 km</span></div>
+    <div class="row"><span>Opportunity</span><div class="track"><div class="fill o" data-w="100"></div><i class="mark"></i></div><span>45.16 km</span></div>
+    <button class="btn" id="raceBtn">Start the race</button>
+    <p style="margin-top:14px">Opportunity was the first human-made vehicle to travel a marathon distance on another world. It also outlived its plan by about 60 times.</p>
+  </section>
+
+  <section class="reveal">
+    <h2>Their story, in order</h2>
+    <div class="steps" id="tlTabs"></div>
+    <ul class="evts" id="evts"></ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Two worlds apart: landing sites</h2>
+    <div class="map" id="map">
+      <button class="hot" style="left:48.7%;top:58.1%" data-k="0" aria-label="Gusev Crater"></button>
+      <button class="hot" style="left:98.5%;top:51.1%" data-k="1" aria-label="Meridiani Planum"></button>
+    </div>
+    <p style="font-size:.85rem;color:var(--soft)">A simple flat map of Mars. Positions are approximate. The two sites are on opposite sides of the planet.</p>
+    <div class="panel glass"><h3 id="mTitle">Tap a dot</h3><p id="mText">See where each rover landed.</p></div>
+  </section>
+
+  <section class="reveal">
+    <h2>Landing: Spirit’s bouncy arrival</h2>
+    <p>A parachute slowed it, a heat shield protected it, retrorockets cut its speed, and four airbags cushioned the landing. Spirit bounced <strong>28 times</strong> before stopping. Try it:</p>
+    <div class="drop"><div id="ball"></div></div>
+    <p><button class="btn" id="dropBtn" data-n="28">Drop the airbags!</button> &nbsp; Bounces: <strong id="count">0</strong></p>
+  </section>
+
+  <section class="reveal">
+    <h2>Big discoveries: tap a card</h2>
+    <div class="disc" id="disc"></div>
+  </section>
+
+  <section class="reveal">
+    <h2>Opportunity: the long-distance explorer</h2>
+    <p>Opportunity was built for a short primary mission. Instead it worked for almost 15 years. Follow its trail:</p>
+    <div class="steps" id="oTabs"></div>
+    <div class="panel glass" aria-live="polite"><h3 id="oTitle"></h3><p id="oText"></p></div>
+
+    <h3 style="margin-top:34px">Planned life vs real life</h3>
+    <div id="life">
+      <div class="row"><span>Planned</span><div class="track"><div class="fill s" data-w="1.7"></div></div><span>1×</span></div>
+      <div class="row"><span>Actual</span><div class="track"><div class="fill o" data-w="100"></div></div><span>~60×</span></div>
+    </div>
+    <button class="btn" id="lifeBtn">Show the difference</button>
+
+    <h3 style="margin-top:34px">The dust storm: drag the slider</h3>
+    <p>In June 2018, a planet-wide dust storm covered Opportunity’s location. This is a simple illustration of what happens to a solar-powered rover.</p>
+    <div class="storm" id="storm"><div class="sun"></div><div id="stormO"></div></div>
+    <input type="range" id="stormR" min="0" max="100" value="0" aria-label="Dust storm strength" style="width:100%">
+    <p>Sunlight reaching the panels: <strong id="stormP">100%</strong> · <span id="stormM">Clear sky. The rover is working.</span></p>
+  </section>
+
+  <section class="reveal">
+    <h2>Science tools</h2>
+    <div class="split">
+      <div class="light"><img src="images/mer-3d.png" alt="3D model of a Mars Exploration Rover"></div>
+      <div>
+        <div class="inst" id="inst"></div>
+        <div class="panel glass" aria-live="polite"><h3 id="iTitle"></h3><p id="iText"></p></div>
+      </div>
+    </div>
+    <p style="margin-top:14px">Each rover weighed about 185 kg. The whole spacecraft at launch, with landing gear, weighed 1,062 kg.</p>
+  </section>
+
+  <section class="reveal">
+    <h2>Meet the rover: tap the dots</h2>
+    <div class="split">
+      <div class="stage">
+        <img src="images/mer-art.png" alt="Close view of a rover">
+        <button class="hot" style="left:64%;top:14%" data-p="0" aria-label="Camera head"></button>
+        <button class="hot" style="left:55%;top:31%" data-p="1" aria-label="Antenna"></button>
+        <button class="hot" style="left:21%;top:49%" data-p="2" aria-label="Solar panels"></button>
+        <button class="hot" style="left:53%;top:90%" data-p="3" aria-label="Wheel"></button>
+      </div>
+      <div class="panel glass" aria-live="polite"><h3 id="pTitle">Tap a dot</h3><p id="pText">Each dot shows a part of the rover.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Why they matter: three rovers, one story</h2>
+    <p>Sojourner, Spirit and Opportunity each pushed farther than planned. Compare them:</p>
+    <div class="steps" id="cmpTabs"></div>
+    <div class="cols" id="cmp" aria-live="polite"></div>
+    <p class="script" style="margin-top:30px">Each one went farther than anyone expected.</p>
+    <p style="text-align:center;color:var(--soft)">Together they show that new ideas, patience and curiosity can reveal the history of another world.</p>
+  </section>
+
+  <section class="reveal">
+    <h2>Test yourself</h2>
+    <div id="quizMer"></div><p id="scoreMer"></p>
+  </section>
+
+  <footer class="end reveal">
+    <p class="script">Abandoned, but not forgotten.</p>
+    <p>Both rovers are still on Mars, the physical remains of missions that taught us so much.</p>
+    <a class="btn" href="index.html">Back to the start</a>
+    <p style="font-size:.85rem;color:var(--soft);margin-top:30px">Sources: NASA Science and NASA/JPL mission pages. Images are NASA illustrations; check NASA media usage guidance before publishing.</p>
+  </footer>
+</main>
+<script src="script.js"></script>
+<script src="mer.js"></script>
+</body>
+</html>
